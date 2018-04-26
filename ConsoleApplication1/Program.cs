@@ -3,13 +3,18 @@
 namespace ConsoleApplication1 {
     class Program {
         static void Main(string[] args) {
-            HardHeat();
+            Console.Write("Номер задания = ");
+            var taskNumber = int.Parse(Console.ReadLine());
+            SimpleHeat(taskNumber);
         }
 
-        private static void SimpleHeat() {
-            var a = double.Parse(Console.ReadLine());
-            var h = double.Parse(Console.ReadLine());
-            var heat = new SimpleHeat(a, h);
+        private static void SimpleHeat(int taskNumber) {
+            //Console.Write("A = ");
+            //var a = double.Parse(Console.ReadLine().Replace(".", ","));
+            var a = 0.5;
+            Console.Write("H = ");
+            var h = double.Parse(Console.ReadLine().Replace(".", ","));
+            var heat = new SimpleHeat(a, h, taskNumber);
             Console.WriteLine("begin...");
             heat.Run(1, 1.5 * Math.Pow(h, 2));
             Console.WriteLine("end");

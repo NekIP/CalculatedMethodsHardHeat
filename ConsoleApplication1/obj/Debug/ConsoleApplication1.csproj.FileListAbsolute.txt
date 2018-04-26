@@ -26,3 +26,12 @@ C:\HardHeatBass\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
 C:\HardHeatBass\ConsoleApplication1\bin\Debug\Newtonsoft.Json.dll
 C:\HardHeatBass\ConsoleApplication1\bin\Debug\Newtonsoft.Json.xml
 C:\HardHeatBass\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+D:\Projects\C#\CalculatedMethodsHardHeat\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+D:\Projects\C#\CalculatedMethodsHardHeat\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+D:\Projects\C#\CalculatedMethodsHardHeat\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+D:\Projects\C#\CalculatedMethodsHardHeat\ConsoleApplication1\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\C#\CalculatedMethodsHardHeat\ConsoleApplication1\bin\Debug\Newtonsoft.Json.xml
+D:\Projects\C#\CalculatedMethodsHardHeat\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+D:\Projects\C#\CalculatedMethodsHardHeat\ConsoleApplication1\obj\Debug\ConsoleApplication1.csproj.CoreCompileInputs.cache
+D:\Projects\C#\CalculatedMethodsHardHeat\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+D:\Projects\C#\CalculatedMethodsHardHeat\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
