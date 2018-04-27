@@ -27,6 +27,10 @@ namespace ConsoleApplication1 {
         }
 
         public void Run(double tMax, double tau) {
+            if (Directory.Exists(DefaultPathProcess)) {
+                Directory.Delete(DefaultPathProcess, true);
+            }
+            Directory.CreateDirectory(DefaultPathProcess);
             for (double k = 0, i = 0; k < tMax; k += tau, i += 1) {
                 Heat(tau);
                 SaveToFile($"{ DefaultPathProcess }heat{(int)i}.vts");
@@ -45,8 +49,8 @@ namespace ConsoleApplication1 {
                 fs.WriteLine("      <Points>");
                 fs.WriteLine("        <DataArray type=\"Float32\" NumberOfComponents=\"3\" format=\"ascii\">");
                 fs.WriteLine("          ");
-                for (int j = 0; j <= CellCountX; j++) {
-                    for (int i = 0; i <= CellCountY; i++) {
+                for (int i = 0; i <= CellCountX; i++) {
+                    for (int j = 0; j <= CellCountY; j++) {
                         fs.Write($"{Format(i * H)} {Format(j * H)} 0.0 ");
                     }
                 }
@@ -56,8 +60,8 @@ namespace ConsoleApplication1 {
                 fs.WriteLine("      <CellData Scalars=\"Temperature, Proc\">");
                 fs.WriteLine("        <DataArray type=\"Float32\" Name=\"Temperature\" format=\"ascii\">");
                 fs.WriteLine("          ");
-                for (int j = 0; j < CellCountY; j++) {
-                    for (int i = 0; i < CellCountX; i++) {
+                for (int i = 0; i < CellCountX; i++) {
+                    for (int j = 0; j < CellCountY; j++) {
                         fs.Write($"{ Format(Math.Round(Cells[i, j].S, 2)) } ");
                     }
                     fs.WriteLine();
@@ -70,14 +74,6 @@ namespace ConsoleApplication1 {
             }
         }
 
-        public void ReadNodeFile(string path) {
-            if (File.Exists(path)) {
-                using (var fp = new StreamReader(File.Open(path, FileMode.Open))) {
-                    /*fp.ReadLine
-                    nodes = new Point*/
-                }
-            }
-        }
         public override string ToString() {
             var result = string.Empty;
             for (var i = 0; i < CellCountX; i++) {
@@ -140,8 +136,8 @@ namespace ConsoleApplication1 {
                     for (var j = 0; j < CellCountY; j++) {
                         Cells[i, j] = new Cell(
                             i == 0 ? temperatures[0] :
-                            j == CellCountY ? temperatures[1] :
-                            i == CellCountX ? temperatures[2] :
+                            j == CellCountY - 1 ? temperatures[1] :
+                            i == CellCountX - 1 ? temperatures[2] :
                             j == 0 ? temperatures[3] : 0
                         );
                     }
